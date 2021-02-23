@@ -11,6 +11,8 @@ import "./Chat.css";
 
 let socket;
 
+
+
 const Chat = ({ location }) => {
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
@@ -19,8 +21,12 @@ const Chat = ({ location }) => {
   const [messages, setMessages] = useState([]);
   const ENDPOINT = "http://localhost:5000/";
 
+  
+
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
+
+    
 
     socket = io(ENDPOINT);
 
